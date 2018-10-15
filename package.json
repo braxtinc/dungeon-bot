@@ -1,0 +1,25 @@
+{
+  "name": "dungeon-bot",
+  "version": "0.0.4",
+  "description": "The dungeon master, this bot has a inventories, guild cards, quests, and slimes!",
+  "main": "index.js",
+  "dependencies": {
+    "better-sqlite-pool": "^0.1.2",
+    "discord.js": "^11.4.2",
+    "enmap": "^4.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brad Castillo",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/braxtinc/dungeon-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/braxtinc/dungeon-bot/issues"
+  },
+  "homepage": "https://github.com/braxtinc/dungeon-bot#readme"
+}
