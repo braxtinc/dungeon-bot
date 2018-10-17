@@ -1,11 +1,11 @@
 exports.run = (client, message, args) => {
 	
-	if(client.user.scoreCard.has(`${message.author.id}`)) {
+	if(client.scoreCard.has(`${message.author.id}`)) {
 		message.channel.send("You already have a guild card! Do \`,card\` to see it.");
 		return;
 	};
 
-	client.user.scoreCard.set(`${message.author.id}`, {
+	client.scoreCard.set(`${message.author.id}`, {
 		user: message.author.username,
 		guild: message.author.guild.name,
 		level: 1,
