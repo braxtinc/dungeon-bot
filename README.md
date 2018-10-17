@@ -5,7 +5,7 @@ Just a discord bot pretty much. It has an inventory, shop, quest board, and othe
 https://trello.com/b/ilbofmgZ/dungeon-bot
 
 # donate?
-paypal.me/braxtincc
-ko-fi.com/braxtinc
+
+[![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/B0B2I27C)
 
 Thank you for the support if you decide to donate!
