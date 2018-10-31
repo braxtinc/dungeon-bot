@@ -1,6 +1,6 @@
 exports.run = (client, message, args) => {
 
-	if(client.scoreCard.has(`${message.author.id}`)){
+	if(client.scoreCard.has(message.author.id)){
 
 		message.channel.send(
 			"Here you are: \n" +

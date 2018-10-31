@@ -1,8 +1,8 @@
 exports.run = (client, message, args) => {
 
-	client.scoreCard.set(`${message.author.id}`, {
+	client.scoreCard.ensure(message.author.id, {
 	
-		Name : `${message.author.username}`,
+		Name : message.author.username,
 	
 		Level : 0,
 	

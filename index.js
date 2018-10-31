@@ -6,11 +6,9 @@ const fs = require("fs");
 const client = new Discord.Client();
 const config = require("./config.json");
 
-
 client.config = config;
 client.scoreCard = new Enmap({name : "Score Card"});
 client.stats = new Enmap({name : "Statistics"});
-
 
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
