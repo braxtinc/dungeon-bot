@@ -1,33 +1,18 @@
 exports.run = (client, message, args) => {
 
-switch(client.scoreCard.has(`${message.author.id}`)){
-	case true:
+	if(client.scoreCard.has(`${message.author.id}`)){
 
-		message.channel.send(`Here you are \\*hands card\\*:\n` + 
-
+		message.channel.send(
+			"Here you are: \n" +
 			`\`\`\`\n` +
+			`Name: ${client.scoreCard.get(`${message.author.id}`, "Name")}\n` +
+			`Level: ${client.scoreCard.get(`${message.author.id}`, "Level")}\t` +
+			`Experience : ${client.scoreCard.get(`${message.author.id}`, "Experience")}\n` +
+			`\tGold: ${client.scoreCard.get(`${message.author.id}`, "Gold")}\n\`\`\``
+		);
 
-			`Name : ${client.scoreCard.get(message.author.id, "user")} \n` +
-
-			`Guild : ${client.scoreCard.get(message.author.id, "guild")} \n` +
-
-			`Level : ${client.scoreCard.get(message.author.id, "level")} \t` +
-
-			`Experience : ${client.scoreCard.get(message.author.id, "experience")} \n` +
-
-			`Gold : ${client.scoreCard.get(message.author.id, "gold")} \n` +
-
-			`\`\`\``
-
-			);
-
-	break;
-
-	case false:
-
-		message.channel.send("You do not have a guild card, something happened, rejoin the server..")
-
-	break;
-}
-
+	} else {
+		message.channel.send("You seem to not have a card, run \`,get-card\` to get one.");
+	}
+	
 };
