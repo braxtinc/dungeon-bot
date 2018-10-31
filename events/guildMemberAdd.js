@@ -2,14 +2,21 @@ module.exports = (client, member) => {
 	console.log(`${member.displayName} (${member.id}) has joined the server ${member.guild}.`);
 	member.send(``);
 
-	client.stats.set(`${member.id}`, {
+
+	client.stats.ensure(`${member.id}`, {
 		strength: Math.floor(Math.random() * 10) + 1,
 		charisma: Math.floor(Math.random() * 10) + 1,
 		luck: Math.floor(Math.random() * 10) + 1,
 		vitality: Math.floor(Math.random() * 10) + 1
 	});
-	
-	client.scoreCard.set(`${member.id}`, {
+		
+	client.charInfo.ensure(member.id, {
+		health: 50 + (client.stats.get(member.id, "vitality") * 5),
+		stamina: 10 + (client.stats.get(member.id, "vitality") * 3),
+		weight: client.stats.get(member.id, "strength") * 2
+	});
+
+	client.scoreCard.ensure(`${member.id}`, {
 		user: `${member.username}`,
 		guild: "",
 		level: 1,
@@ -29,7 +36,6 @@ module.exports = (client, member) => {
 		`Vitality: ${client.stats.get(member.id, "vitality")}`+
 		`\`\`\`` +
 		`If you need to know which stats do what, just ping \`@braxtin#3963\` or check the trello page.\n\n` +
-
 		`Last but not least, here is your guild card.\n` + 
 		`\`\`\`\n` +
 		`Name : ${client.scoreCard.get(member.id, "user")} \n` +

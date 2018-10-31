@@ -9,6 +9,8 @@ const config = require("./config.json");
 client.config = config;
 client.scoreCard = new Enmap({name : "Score Card"});
 client.stats = new Enmap({name : "Statistics"});
+client.charInfo = new Enmap({name : "Character Info"});
+
 
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
