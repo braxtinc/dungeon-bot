@@ -8,8 +8,8 @@ const config = require("./config.json");
 
 
 client.config = config;
-client.scoreCard = new Enmap({Name : "Score Card"});
-client.stats = new Enmap({Name : "Statistics"});
+client.scoreCard = new Enmap({name : "Score Card"});
+client.stats = new Enmap({name : "Statistics"});
 
 
 fs.readdir("./events/", (err, files) => {
